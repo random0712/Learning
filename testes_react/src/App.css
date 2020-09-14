@@ -1,6 +1,13 @@
-.App {
+* {
     margin: 0;
+    height: 100%;
+}
+
+.App {
     display: grid;
-    grid-template-rows: repeat(4, 100px);
-    grid-template-areas: 'menu content user-stats footer';
+    grid-template-columns: 70px 1fr 250px;
+    grid-template-rows: 1fr 30px;
+    grid-template-areas: 
+        'menu content user-stats'
+        'menu footer footer';
 }
