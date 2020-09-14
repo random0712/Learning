@@ -17,7 +17,7 @@ Aprendendo atualmente: React
 
 ## Proximas Tasks:
 1. Definir o layout da tela principal
-2. Começar a desenvolver os componentes basicos
-3. Definir uma palheta de cores do projeto
+2. Definir uma palheta de cores do projeto
+3. Começar a desenvolver os componentes basicos
 4. Configurar o Schema do MySQL
 5. Adicionar requisições simples
