@@ -24,5 +24,19 @@ module.exports = {
         const user = await User.create({ name, email })
 
         return res.json(user)
+    },
+
+    async remove(req, res) {
+        const { id } = req.params
+
+        const remove = await User.destroy({
+            where: {
+              id
+            }
+        })
+
+        if(!remove) return res.status(404).json({error: "Usuario não encontrado"})
+
+        return res.status(204).send()
     }
 }
