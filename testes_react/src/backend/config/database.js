@@ -1,3 +1,3 @@
-const { dbConfig } = require('../../.env')
+const { dbConfig } = require('../../.env.local')
 
 module.exports = dbConfig
