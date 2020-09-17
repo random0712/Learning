@@ -7,10 +7,11 @@ Aprendendo atualmente: React
 - Styled Components
 - MySQL
 - Express
+- Sequelize
 - Nodemon (Desenvolvimento)
 
 ## O que nos estamos tentando fazer:
-- Uma plataforma de aprendizado de programação usando conceitos de gamificaçao, UI/UX
+- Um site de controle de estoque
 
 ## O que nos temos:
 - No momento só um template mal feito
@@ -19,5 +20,3 @@ Aprendendo atualmente: React
 1. Definir o layout da tela principal
 2. Definir uma palheta de cores do projeto
 3. Começar a desenvolver os componentes basicos
-4. Configurar o Schema do MySQL
-5. Adicionar requisições simples
