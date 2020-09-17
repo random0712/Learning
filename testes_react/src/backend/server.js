@@ -5,6 +5,8 @@ const routes = require('./routes')
 app.use(express.json())
 app.use(routes)
 
+require('./database')
+
 const port = 3131
 
 app.listen(port, () => {
