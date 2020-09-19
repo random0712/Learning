@@ -1,5 +1,5 @@
 # Learning
-Aprendendo atualmente: React
+Aprendendo atualmente: React e ORM's com Sequelize
 
 ## Dependências do projeto:
 - Node
@@ -8,15 +8,13 @@ Aprendendo atualmente: React
 - MySQL
 - Express
 - Sequelize
+- React-icons
+- React-gravatar
 - Nodemon (Desenvolvimento)
 
 ## O que nos estamos tentando fazer:
 - Um site de controle de estoque
 
-## O que nos temos:
-- No momento só um template mal feito
-
-## Proximas Tasks:
-1. Definir o layout da tela principal
-2. Definir uma palheta de cores do projeto
-3. Começar a desenvolver os componentes basicos
+## Progresso:
+- Backend(70% Concluido)
+- FrontEnd(20% Concluido)
