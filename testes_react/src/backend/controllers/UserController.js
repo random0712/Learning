@@ -21,6 +21,10 @@ module.exports = {
 
     async save(req,  res) {
         const { name, email } = req.body
+        const validateEmail = await User.findOne({where: {email}})
+
+        if(validateEmail) return res.status(400).json({error: 'Email já cadastrado'}) 
+
         const user = await User.create({ name, email })
 
         return res.json(user)

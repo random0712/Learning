@@ -3,7 +3,7 @@ import './App.css'
 
 import Content from './frontend/components/template/content/Content'
 import Menu from './frontend/components/template/menu/Menu'
-import UserStats from './frontend/components/template/userStats/UserStats'
+import Header from './frontend/components/template/header/Header'
 import Footer from './frontend/components/template/footer/Footer'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
         <Content></Content>
         <Menu></Menu>
-        <UserStats></UserStats>
+        <Header></Header>
         <Footer></Footer>
     </div>
   );

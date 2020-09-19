@@ -53,6 +53,13 @@ module.exports = {
             return res.status(404).json({ error: 'Usuario não encontrado' })
         }
 
+        const product = await Product.findOne({where: {
+            id,
+            owner_id
+        }})
+
+        if(!product) return res.status(404).json({error: 'Produto não encontrado'})
+
         const remove = await Product.destroy({where: { id }})
 
         if(!remove) {

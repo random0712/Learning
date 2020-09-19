@@ -1,13 +1,33 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("./frontend/assets/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: "Nanum Gothic";
+    src: url("./frontend/assets/NanumGothic-Bold.ttf")
+}
+
 * {
+    font-family: "Montserrat";
     margin: 0;
     height: 100%;
 }
 
 .App {
     display: grid;
-    grid-template-columns: 70px 1fr 250px;
-    grid-template-rows: 1fr 30px;
+    background-color: #eaf2ef;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 70px 1fr 90px;
     grid-template-areas: 
-        'menu content user-stats'
-        'menu footer footer';
+        'header header'
+        'menu content'
+        'menu footer';
+}
+
+.gravatar {
+    max-height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
 }
