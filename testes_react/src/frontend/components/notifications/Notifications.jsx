@@ -1,28 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { FaRegBell } from 'react-icons/fa'
 
 import StyledDiv from './styles'
 
-class Notifications extends Component {
-    constructor(props) {
-        super(props)
+const Notifications = props => {
 
-        this.state = {dropdownIsVisible: false}
-
-        this.toggleDropdown = this.toggleDropdown.bind(this)
-    }
-
-    toggleDropdown() {
-        this.setState({dropdownIsVisible: !this.state.dropdownIsVisible})
-    }
-
-    render() {
-        return (
-            <StyledDiv onClick={this.toggleDropdown}>
-                <FaRegBell />
-            </StyledDiv>
-        )
-    }
+    return (
+        <StyledDiv onClick={() => {props.change('notifications')}}>
+            <FaRegBell />
+        </StyledDiv>
+    )
 }
 
 export default Notifications
