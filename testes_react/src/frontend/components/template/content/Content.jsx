@@ -1,11 +1,16 @@
 import React from 'react'
 import StyledContent from './styles'
+import { BrowserRouter } from 'react-router-dom'
+
+import Routes from '../../../routes'
 
 class Content extends React.Component {
     render() {
         return (
             <StyledContent>
-                Content
+                <BrowserRouter>
+                    <Routes></Routes>
+                </BrowserRouter>
             </StyledContent>
         )
     }
