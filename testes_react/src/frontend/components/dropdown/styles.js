@@ -6,6 +6,7 @@ const StyledDiv = styled.div`
     right: 10px;
     height: 230px;
     width: 250px;
+    z-index: 2;
     border-radius: 5px;
     background-color: #FFF;
     box-shadow: 0px 0px 10px 0.1px rgba(0,0,0,0.25);
@@ -17,7 +18,7 @@ const StyledDiv = styled.div`
 `
 
 const StyledTitle = styled.div`
-    max-height: 30px;
+    height: 30px;
     width: 250px;
     border-radius: 5px 5px 0px 0px;
     color: white;
@@ -41,7 +42,7 @@ const StyledUl = styled.ul`
 
     & li {
         width: 250px;
-        height: 40px;
+        height: 50px;
         list-style: none;
     }
 `

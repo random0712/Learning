@@ -1,15 +1,22 @@
 import React from 'react'
-import { StyledMain } from './styles'
+import { StyledMain, RegistersArea } from './styles'
 
-import { FaClipboardList } from 'react-icons/fa'
+import { BsClipboard } from 'react-icons/bs'
+import { FaBoxOpen } from 'react-icons/fa'
 
 import Dashboard from '../../components/dashboard/Dashboard'
+import RegisterCard from '../../components/registerCard/RegisterCard'
 
 const Register = props => {
 
+    const iconSize = "150px"
+
     return (
         <StyledMain>
-            <Dashboard name="Cadastros" icon={<FaClipboardList className="icon"/>}></Dashboard>
+            <Dashboard name="Cadastros" icon={<BsClipboard className="icon"/>}></Dashboard>
+            <RegistersArea>
+                <RegisterCard to="/register/products" icon={<FaBoxOpen size={iconSize}/>} name="Produtos"></RegisterCard>
+            </RegistersArea>
         </StyledMain>
     )
 }

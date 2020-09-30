@@ -6,7 +6,8 @@ const StyledFooter = styled.footer`
     align-items: center;
     justify-content: flex-end;
     font-size: 1.1rem;
-    margin-right: 8px;
+    padding-right: 8px;
+    background-color: #eaf2ef;
 
     & .icon {
         padding: 0px 5px;

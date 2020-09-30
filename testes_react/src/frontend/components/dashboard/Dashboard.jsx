@@ -1,6 +1,8 @@
 import React from 'react'
 import { StyledDiv, Column } from './styles'
 
+import Clock from '../clock/Clock'
+
 
 const Dashboard = props => {
 
@@ -10,7 +12,7 @@ const Dashboard = props => {
                 {props.icon}
                 <span>{props.name}</span>
             </StyledDiv>
-        <span>{new Date().toLocaleString('pt-br')}</span>
+            <Clock></Clock>
         </Column>
     )
 }

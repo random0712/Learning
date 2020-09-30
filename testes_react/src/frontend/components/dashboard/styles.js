@@ -1,13 +1,10 @@
 import styled from 'styled-components'
 
 const StyledDiv = styled.div`
-    width: 100%;
-    height: 100px;
-    padding: 20px;
-
-
+    
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 
     & span {
         font-family: "Montserrat Medium";
@@ -17,14 +14,16 @@ const StyledDiv = styled.div`
     }
 
     & .icon {
-        font-size: 2.5rem;
-        margin-right: 25px;
+        font-size: 2.3rem;
+        margin-right: 15px;
     }
 `
 
 const Column = styled.div`
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    height: 100px;
 `
 
 export { StyledDiv, Column }
