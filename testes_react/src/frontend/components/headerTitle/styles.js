@@ -8,6 +8,11 @@ const StyledSpan = styled.span`
     align-items: center;
     font-weight: bold;
     text-align: center;
+
+    & a {
+    	text-decoration: none;
+    	color: #000;
+    };
 `
 
 export default StyledSpan

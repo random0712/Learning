@@ -1,4 +1,6 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+
 import './App.css'
 
 import Content from './frontend/components/template/content/Content'
@@ -8,12 +10,14 @@ import Footer from './frontend/components/template/footer/Footer'
 
 function App() {
   return (
-    <div className="App">
-        <Content></Content>
-        <Menu></Menu>
-        <Header></Header>
-        <Footer></Footer>
-    </div>
+  	<BrowserRouter>
+	    <div className="App">
+	        <Content></Content>
+	        <Menu></Menu>
+	        <Header></Header>
+	        <Footer></Footer>
+	    </div>
+    </BrowserRouter>
   );
 }
 

@@ -23,7 +23,7 @@
     display: grid;
     height: 100vh;
     background-color: #eaf2ef;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 100px 1fr;
     background-color: #E3E9EF;
     grid-template-rows: 70px 1fr 90px;
     grid-template-areas: 

@@ -6,6 +6,8 @@ import Configs from '../configs/Configs'
 import User from '../user/User'
 import HeaderDropdowns from '../headerDropdowns/HeaderDropdowns'
 
+const { user } = require('../../global')
+
 class UserConfig extends Component {
     constructor(props) {
         super(props)
@@ -25,7 +27,7 @@ class UserConfig extends Component {
             <StyledDiv>
                 <Notifications  change={this.changeDropdown}/>
                 <Configs change={this.changeDropdown}></Configs>
-                <User name="Patrick Amaro" email="teste@teste.com" 
+                <User name={user.name} email={user.email} 
                     change={this.changeDropdown}
                     dropdown={this.state.dropdown} />
                 <HeaderDropdowns change={this.changeDropdown}

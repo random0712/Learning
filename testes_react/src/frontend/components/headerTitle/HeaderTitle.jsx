@@ -1,10 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import StyledSpan from './styles'
 
 
 const HeaderTitle = ({ children }) => {
     return (
-        <StyledSpan>{children}</StyledSpan>
+        <StyledSpan>
+        	<Link to="/">
+        		{children}
+        	</Link>
+        </StyledSpan>
     )
 }
 

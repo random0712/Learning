@@ -22,7 +22,7 @@ const StyledDiv = styled.div`
 const Column = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 0px;
     height: 100px;
 `
 
