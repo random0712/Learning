@@ -41,7 +41,7 @@ const StyledDiv = styled.div`
 
 		padding: 10px 15px;
 		border-radius: 20px;
-		background-color: skyblue;
+		background-color: #8F509D;
 	}
 
 	& h4 {

@@ -1,24 +1,23 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
+import history from './history';
+
 
 import './App.css'
 
-import Content from './frontend/components/template/content/Content'
-import Menu from './frontend/components/template/menu/Menu'
-import Header from './frontend/components/template/header/Header'
-import Footer from './frontend/components/template/footer/Footer'
+import Grid from './frontend/components/template/grid/Grid'
 
-function App() {
-  return (
-  	<BrowserRouter>
-	    <div className="App">
-	        <Content></Content>
-	        <Menu></Menu>
-	        <Header></Header>
-	        <Footer></Footer>
-	    </div>
-    </BrowserRouter>
-  );
+import { UserProvider } from './frontend/context/User'
+
+
+function App(props){
+	return (
+	  	<Router history={history}>
+	  		<UserProvider>
+			    <Grid></Grid>
+			</UserProvider>
+	    </Router>
+	);
 }
 
 export default App

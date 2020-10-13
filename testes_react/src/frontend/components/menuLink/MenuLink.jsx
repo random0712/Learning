@@ -1,15 +1,15 @@
 import React from 'react'
 import StyledDiv from './styles'
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const MenuLink = props => {
 
 	return (
 		<StyledDiv>
-				<Link to={props.to}>
+				<NavLink to={props.to} activeStyle={{backgroundColor: "#8E4585"}}>
 	                <i>{props.icon}</i>
-	            </Link>
+	            </NavLink>
 		</StyledDiv>	
 	)
 };

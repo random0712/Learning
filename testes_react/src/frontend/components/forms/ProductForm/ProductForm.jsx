@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Formik, Form} from 'formik'
-import axios from 'axios'
+import api from '../../../api'
 import * as Yup from 'yup'
 
 import { StyledDiv } from './styles'
@@ -9,7 +9,7 @@ import FormButtons from '../../formButtons/FormButtons'
 import Button from '../../button/Button'
 import FormError from '../../formError/FormError'
 
-const { baseURL, user } = require("../../../global") 
+import { UserContext } from '../../../context/User' 
 
 const ProductSchema = Yup.object().shape({
    name: Yup.string()
@@ -21,17 +21,18 @@ const ProductSchema = Yup.object().shape({
     .required('Digite uma quantidade válida'),
    price: Yup.number()
    	.required('Insira o preço'),
-   image_url: Yup.string()
 });
 
 
 const ProductForm = props => {
 
+	const { user } = useContext(UserContext)
+
 	const onSubmit = (values, {resetForm}) => {
 		const data = values
-		axios.post(`${baseURL}/users/${user.id}/products`, data)
+		api.post(`/users/${user.id}/products`, data)
 			.then(_ => resetForm({}))
-			.catch(err => console.log(err))
+			.catch(err => err)
 	}
 
 
@@ -54,8 +55,6 @@ const ProductForm = props => {
 		        		{touched.amount && errors.amount && <FormError>{errors.amount}</FormError>}
 		        		<FormInput name="price" label="Preço: " type="number" />
 		        		{touched.price && errors.price && <FormError>{errors.price}</FormError>}
-		        		<FormInput name="image_url" label="URL da Imagem (Opcional):" type="text" />
-		        		{touched.image_url && errors.image_url && <FormError>{errors.image_url}</FormError>}
 		        		<FormButtons>
 		        			<Button primary type="submit" disabled={isSubmitting}>Salvar</Button>
 		        		</FormButtons>

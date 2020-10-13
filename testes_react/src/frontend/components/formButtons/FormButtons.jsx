@@ -5,7 +5,7 @@ import StyledDiv from './styles'
 const FormButtons = props => {
 
 	return (
-		<StyledDiv>
+		<StyledDiv center={props.center}>
 			{props.children}
 		</StyledDiv>
 	)

@@ -8,7 +8,7 @@ class Header extends React.Component {
     render() {
         return (
             <StyledHeader>
-                <ContentConfig></ContentConfig>
+                <ContentConfig toggleMenu={this.props.toggleMenu}></ContentConfig>
                 <UserConfig></UserConfig>
             </StyledHeader>
         )

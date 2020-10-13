@@ -9,7 +9,7 @@ const ContentConfig = props => {
     return(
         <StyledDiv>
             <HeaderTitle>Stock System</HeaderTitle>
-            <MenuToggle></MenuToggle>
+            <MenuToggle toggleMenu={props.toggleMenu}></MenuToggle>
             <SearchBar></SearchBar>
         </StyledDiv>
     )

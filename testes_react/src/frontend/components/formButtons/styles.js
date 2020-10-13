@@ -4,7 +4,7 @@ const StyledDiv = styled.div`
 	margin-top: 30px;
 
 	display: flex;
-	align-items: flex-start;
+	justify-content: ${props => props.center ? "center" : "flex-start"};
 `
 
 export default StyledDiv;

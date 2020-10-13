@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Gravatar from 'react-gravatar'
 import { FaAngleRight, FaAngleDown } from 'react-icons/fa'
 
@@ -11,17 +11,15 @@ function ArrowToggle(props) {
     return <FaAngleRight size="7px" />
 }
 
-class User extends Component {
+const User = props => {
 
-    render() {
-        return (
-            <StyledDiv onClick={() => {this.props.change('users')}}>
-                <StyledSpan>{this.props.name}</StyledSpan>
-                <Gravatar email={this.props.email} size={30} className="gravatar"/>
-                <ArrowToggle dropdown={this.props.dropdown}/>
-            </StyledDiv>
-        )
-    }
+    return (
+        <StyledDiv onClick={() => {props.change('users')}}>
+            <StyledSpan>{props.name}</StyledSpan>
+            <Gravatar email={props.email} size={30} className="gravatar"/>
+            <ArrowToggle dropdown={props.dropdown}/>
+        </StyledDiv> 
+    )
 }
 
 export default User

@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const bcrypt = require('bcryptjs')
 
 module.exports = {
     async getAll(req, res) {
@@ -13,19 +14,22 @@ module.exports = {
         const user = await User.findByPk(id)
 
         if(!user) {
-            return res.status(404).json({error: "Usuario não encontrado"})
+            return res.json({error: "Usuario não encontrado"})
         }
 
         return res.status(200).json(user)
     },
 
     async save(req,  res) {
-        const { name, email } = req.body
+        const { name, email, password } = req.body
         const validateEmail = await User.findOne({where: {email}})
 
-        if(validateEmail) return res.status(400).json({error: 'Email já cadastrado'}) 
+        const salt = bcrypt.genSaltSync(10)
+        const hash = bcrypt.hashSync(password, salt)
 
-        const user = await User.create({ name, email })
+        if(validateEmail) return res.json({error: 'Email já cadastrado'}) 
+
+        const user = await User.create({ name, email, password: hash })
 
         return res.json(user)
     },

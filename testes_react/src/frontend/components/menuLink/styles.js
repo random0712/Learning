@@ -7,6 +7,7 @@ const StyledDiv = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	outline: none;
 
 	& a {
 		width: 100%;
@@ -19,7 +20,7 @@ const StyledDiv = styled.div`
 	};	
 
 	& a:hover {
-		background-color: #8E4585;
+		background-color: #8F509D;
 	};
 
 	& .icon{

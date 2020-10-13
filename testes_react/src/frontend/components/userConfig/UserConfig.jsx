@@ -1,40 +1,36 @@
-import React, { Component } from 'react'
+import React, { useState, useContext } from 'react'
 import StyledDiv from './styles'
+import { UserContext } from '../../context/User'
 
 import Notifications from '../notifications/Notifications'
 import Configs from '../configs/Configs'
 import User from '../user/User'
 import HeaderDropdowns from '../headerDropdowns/HeaderDropdowns'
 
-const { user } = require('../../global')
 
-class UserConfig extends Component {
-    constructor(props) {
-        super(props)
+function UserConfig() {
+    const { user } = useContext(UserContext)
+    const [dropdown, setDropdown] = useState(null);
 
-        this.state = {dropdown: null}
-        this.changeDropdown = this.changeDropdown.bind(this)
-    }
-
-    changeDropdown(dropdown) {
-        this.setState({dropdown: dropdown}) 
-    }
-
-    render() {
+    const changeDropdown = drop => {
+        const newDropdown = drop === dropdown 
+            ? null
+            : drop
         
-
-        return (
-            <StyledDiv>
-                <Notifications  change={this.changeDropdown}/>
-                <Configs change={this.changeDropdown}></Configs>
-                <User name={user.name} email={user.email} 
-                    change={this.changeDropdown}
-                    dropdown={this.state.dropdown} />
-                <HeaderDropdowns change={this.changeDropdown}
-                    dropdown={this.state.dropdown} />
-            </StyledDiv>
-        )
+        setDropdown(newDropdown)
     }
+
+    return (
+
+        <StyledDiv>
+            <Notifications  change={changeDropdown}/> 
+            <Configs change={changeDropdown}></Configs>
+            <User name={user.name} email={user.email} 
+                change={changeDropdown}
+                dropdown={dropdown} />
+            <HeaderDropdowns dropdown={dropdown} />
+        </StyledDiv>
+    )
 }
 
 export default UserConfig

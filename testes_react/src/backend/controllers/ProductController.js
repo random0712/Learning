@@ -5,7 +5,7 @@ const { getAll, remove } = require('./UserController')
 module.exports = {
     async save(req, res) {
         const { owner_id } = req.params
-        const { name, price, amount, image_url } = req.body
+        const { name, price, amount } = req.body
 
         const user = await User.findByPk(owner_id)
 
@@ -17,7 +17,6 @@ module.exports = {
             name,
             price,
             amount,
-            image_url,
             owner_id
         })
 

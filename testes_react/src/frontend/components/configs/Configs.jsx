@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { FaCogs } from 'react-icons/fa'
 
 import StyledDiv from './styles'
 
-class Configs extends Component {
+const Configs = props => {
     
-    render() {
-        return (
-            <StyledDiv onClick={() => {this.props.change('configs')}}>
-                <FaCogs />
-            </StyledDiv>
-        )
-    }
+    return (
+        <StyledDiv onClick={() => {props.change('configs')}}>
+            <FaCogs />
+        </StyledDiv>
+    )
 }
 
-export default Configs
+export default Configs 

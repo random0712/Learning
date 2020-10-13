@@ -14,13 +14,14 @@ const StyledInput = styled.div`
 		color: gray;
 		font-family: "Montserrat Medium";
 		align-self: flex-start;
-		font-size: 1.2rem;
+		font-size: ${props => props.signin ? "1rem" : "1.2rem"};
 		margin-bottom: 6px;
 	};
+
 `;
 
 const Input = styled.input`
-	width: 100%;
+	width: 90%;
 	font-family: "Montserrat Medium";
 	color: #000;
 `;

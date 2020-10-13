@@ -17,11 +17,6 @@ class HeaderDropdowns extends Component {
             return null
         }
     }
-
-    componentDidUpdate(prevProps) {
-        if(prevProps.dropdown === this.props.dropdown)
-            this.props.change(null)
-    }
 }
 
 export default HeaderDropdowns
