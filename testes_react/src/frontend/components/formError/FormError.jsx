@@ -1,10 +1,10 @@
 import React from 'react'
 import StyledDiv from './styles'
 
-const FormError = ({ children }) => {
+const FormError = props => {
 
 	return (
-		<StyledDiv>{children}</StyledDiv>
+		<StyledDiv small={props.small}>{props.children}</StyledDiv>
 	)
 }
 

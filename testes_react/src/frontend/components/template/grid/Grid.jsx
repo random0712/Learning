@@ -13,7 +13,6 @@ import { UserContext } from '../../../context/User'
 function Grid(props){
 	const [menuVisible, setMenuVisible] = useState("")
 	const { signin } = useContext(UserContext)
-	console.debug("logged", signin)
 
 	function toggleMenu () {
 

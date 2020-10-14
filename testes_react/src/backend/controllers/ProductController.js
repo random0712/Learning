@@ -20,7 +20,7 @@ module.exports = {
             owner_id
         })
 
-        return res.status(200).json(product)
+        return res.status(200).json({product, success: "Produto cadastro com sucesso!"})
     },
 
     async getAll(req, res) {

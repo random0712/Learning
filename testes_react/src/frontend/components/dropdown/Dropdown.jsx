@@ -7,9 +7,7 @@ const Dropdown = props => {
         <StyledDiv>
             <StyledTitle>{props.title}</StyledTitle>
             <StyledUl>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+                {props.children}
             </StyledUl>
         </StyledDiv>
     )

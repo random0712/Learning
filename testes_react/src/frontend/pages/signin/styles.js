@@ -41,11 +41,18 @@ const StyledDiv = styled.div`
 `
 
 const ToggleMode = styled.div`
+	font-family: "Montserrat Medium";
+	font-size: 0.8rem;
 	color: blue;
 	width: 100%;
 	margin-top: 20px;
+	cursor: pointer;
 
 	text-align: center;
+
+	&:hover {
+		text-decoration: underline;
+	};
 `
 
 

@@ -25,6 +25,6 @@ module.exports = {
 
 		console.debug("Signin Data", `${token}, ${user}`)
 
-		return res.status(200).json({token: token, user: user});
+		return res.status(200).json({token, user, success: "Login confirmado!"});
 	}
 }

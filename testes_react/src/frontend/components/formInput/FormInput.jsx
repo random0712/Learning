@@ -5,7 +5,7 @@ import { Field } from 'formik'
 const FormInput = props => {
 
 	return (
-		<StyledInput signin={props.signin}>
+		<StyledInput signin={props.signin} small={props.small} >
 			<label htmlFor={props.name}>{props.label}</label>
 			<Field  as={Input} name={props.name} type={props.type}  />
 		</StyledInput>

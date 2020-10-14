@@ -18,10 +18,13 @@ const StyledInput = styled.div`
 		margin-bottom: 6px;
 	};
 
+	& input {
+		width:${props => props.small ? "90%" : "100%"};
+	}
+
 `;
 
 const Input = styled.input`
-	width: 90%;
 	font-family: "Montserrat Medium";
 	color: #000;
 `;

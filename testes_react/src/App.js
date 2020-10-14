@@ -2,6 +2,10 @@ import React from 'react'
 import { Router } from 'react-router-dom'
 import history from './history';
 
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 
 import './App.css'
 
@@ -15,6 +19,7 @@ function App(props){
 	  	<Router history={history}>
 	  		<UserProvider>
 			    <Grid></Grid>
+			    <ToastContainer bodyClassName="notifications" limit={3}/>
 			</UserProvider>
 	    </Router>
 	);

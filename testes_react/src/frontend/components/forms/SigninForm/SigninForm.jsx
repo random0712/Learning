@@ -39,12 +39,12 @@ const SigninForm = props => {
 	        	onSubmit={onSubmit}>
 	        	{({errors, touched, isSubmitting}) => (
 		        	<Form className="form">
-		        		<FormInput name="email" label="Email:" type="text" signin />
-		        		{touched.email && errors.email && <FormError>{errors.email}</FormError>}
-		        		<FormInput name="password" label="Senha: " type="password" signin />
-		        		{touched.password && errors.password && <FormError>{errors.password}</FormError>}
+		        		<FormInput name="email" label="Email:" type="text" signin small />
+		        		{touched.email && errors.email && <FormError small >{errors.email}</FormError>}
+		        		<FormInput name="password" label="Senha: " type="password" signin small />
+		        		{touched.password && errors.password && <FormError small >{errors.password}</FormError>}
 		        		<FormButtons center >
-		        			<button className="submitButton" type="submit" disabled={isSubmitting}>Login</button>
+		        			<button className="submitButton" type="submit">Login</button>
 		        		</FormButtons>
 			        </Form>
 	        	)} 

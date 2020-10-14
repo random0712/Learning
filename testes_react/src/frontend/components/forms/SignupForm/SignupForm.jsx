@@ -6,12 +6,14 @@ import FormButtons from '../../formButtons/FormButtons'
 import FormInput from '../../formInput/FormInput'
 import FormError from '../../formError/FormError'
 
-
 import api from '../../../api'
+import { toast } from 'react-toastify';
  
 
 const ProductSchema = Yup.object().shape({
    name: Yup.string()
+   	.min(2, "Nome muito curto")
+   	.max(50, "Nome muito grande")
    	.required('Digite um nome'),
    email: Yup.string()
     .required('Digite o Email')
@@ -25,14 +27,19 @@ const ProductSchema = Yup.object().shape({
 
 
 const SignupForm = props => {
-	
+
 
 	const onSubmit = async (values, {resetForm}) => {
 		const data = values
-		const user = await api.post("/users", data).then(res => res.data)
-		console.log(user)
-		if(user.error){
-			console.debug("ERROR", user.error)
+		const { error, success } = await api.post("/users", data).then(res => res.data)
+
+		if(error){
+			return toast.error(error)
+		}
+
+		if(success) {
+			props.toggleMode()
+			return toast.success(success)
 		}
 	}
 
@@ -50,14 +57,14 @@ const SignupForm = props => {
 	        	onSubmit={onSubmit}>
 	        	{({errors, touched, isSubmitting}) => (
 		        	<Form className="form">
-		        		<FormInput name="name" label="Nome:" type="text" signin />
-		        		{touched.name && errors.name && <FormError>{errors.name}</FormError>}
-		        		<FormInput name="email" label="Email:" type="text" signin />
-		        		{touched.email && errors.email && <FormError>{errors.email}</FormError>}
-		        		<FormInput name="password" label="Senha: " type="password" signin />
-		        		{touched.password && errors.password && <FormError>{errors.password}</FormError>}
-		        		<FormInput name="confirmPassword" label="Confirme a Senha: " type="password" signin />
-		        		{touched.confirmPassword && errors.confirmPassword && <FormError>{errors.confirmPassword}</FormError>}
+		        		<FormInput name="name" label="Nome:" type="text" signin small />
+		        		{touched.name && errors.name && <FormError small >{errors.name}</FormError>}
+		        		<FormInput name="email" label="Email:" type="text" signin small />
+		        		{touched.email && errors.email && <FormError small >{errors.email}</FormError>}
+		        		<FormInput name="password" label="Senha: " type="password" signin small />
+		        		{touched.password && errors.password && <FormError small >{errors.password}</FormError>}
+		        		<FormInput name="confirmPassword" label="Confirme a Senha: " type="password" signin small />
+		        		{touched.confirmPassword && errors.confirmPassword && <FormError small >{errors.confirmPassword}</FormError>}
 		        		<FormButtons center >
 		        			<button className="submitButton" type="submit" disabled={isSubmitting}>Registre-se</button>
 		        		</FormButtons>

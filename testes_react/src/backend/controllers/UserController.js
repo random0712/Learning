@@ -31,7 +31,7 @@ module.exports = {
 
         const user = await User.create({ name, email, password: hash })
 
-        return res.json(user)
+        return res.json({user, success: "Conta cadastrada com sucesso! Efetue o Login para entrar"})
     },
 
     async remove(req, res) {

@@ -39,12 +39,7 @@ const StyledUl = styled.ul`
 
     display: flex;
     flex-direction: column;
-
-    & li {
-        width: 100%;
-        height: 55px;
-        list-style: none;
-    }
+        
 `
 
 export { StyledDiv, StyledTitle, StyledUl }

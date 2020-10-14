@@ -18,7 +18,7 @@ const Signin = props => {
 
 	const form = mode === "signin"
 		? <SigninForm></SigninForm>
-		: <SignupForm></SignupForm>
+		: <SignupForm toggleMode={toggleMode}></SignupForm>
 
     return (
         <StyledDiv>

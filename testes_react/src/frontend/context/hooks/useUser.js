@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import api from '../../api'
 import history from '../../../history'
 
+import { toast } from 'react-toastify';
+
+
 
 export default function useUser() {
 	const [user, setUser] = useState({
@@ -32,20 +35,23 @@ export default function useUser() {
 
 	async function handleLogin(data) {
 		console.debug('Data', data)
-		const {token, user, error} = await api.post('/signin', data)
+		const {token, user, error, success} = await api.post('/signin', data)
 			.then(res =>  res.data)
 			.catch(err => console.log(err))
 		console.debug("Response", `${token} | ${user} | ${error}`)
 		if(error) {
-			return console.log("ERRO: " + error)
+			return toast.error(error)
 		}
 
-		localStorage.setItem('token', JSON.stringify(token));
-		localStorage.setItem('user', JSON.stringify(user));
-		api.defaults.headers.Authorization = `Bearer ${token}`;
-		setUser(user);
-		setSignin("")
-		history.push('/');
+		if(success) {
+			toast.success(success)
+			localStorage.setItem('token', JSON.stringify(token));
+			localStorage.setItem('user', JSON.stringify(user));
+			api.defaults.headers.Authorization = `Bearer ${token}`;
+			setUser(user);
+			setSignin("")
+			history.push('/');
+		}
 	}
 
 	function handleLogout() {

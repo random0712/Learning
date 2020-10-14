@@ -10,6 +10,7 @@ import Button from '../../button/Button'
 import FormError from '../../formError/FormError'
 
 import { UserContext } from '../../../context/User' 
+import { toast } from 'react-toastify';
 
 const ProductSchema = Yup.object().shape({
    name: Yup.string()
@@ -31,8 +32,16 @@ const ProductForm = props => {
 	const onSubmit = (values, {resetForm}) => {
 		const data = values
 		api.post(`/users/${user.id}/products`, data)
-			.then(_ => resetForm({}))
-			.catch(err => err)
+			.then(res => {
+				const { success, error } = res.data
+				if(error) {
+					return toast.error(error)
+				}
+
+				resetForm({})
+				return toast.success(success)
+			})
+			.catch(err => toast.error(err))
 	}
 
 
