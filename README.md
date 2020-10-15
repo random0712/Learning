@@ -30,3 +30,8 @@ Aprendendo atualmente: React e ORM's com Sequelize
   
 ### 02/10
   Passei os ultimos dias estudando a API rest, fazer os formularios foi bem tranquilo graças ao Formik que já configura todo o state. O maior problema foi o axios, porque estava dando um "Network Error" na hora do cadastro do produto e um não tava achando uma solução, até que eu percebi que era um error de digitação na URL base(tinha me esquecido de colocar o http://), mas até que me ajudou esse problema, porque eu estudei cors achando que era um problema da origem da URL. Agora só vou replicar o formulario para outros cadastros e pensar como configurar um signin. 
+  
+### 15/10
+  Apanhei muito mas consegui implementar o signin de um jeito 'bonito', aprendi muita coisa nesse projeto mas continuar ele faria eu mexer com muitas coisas de maneira superficial e eu meu objetivo e focar em poucas coisas e aprimorar meu codigo, muitos erros podiam ser evitados com um pouco mais de atenção e muito esforço podia ser poupado, mas isso faz parte do processo de aprender, eu sofri aqui para não sofrer no futuro. Vou focar em projetos mais rapidos para adquirir certa maturidade com o codigo sem depender muito das documentações a todo momento. Até o proximo projeto :)
+  
+ Observação: O Sistema funciona, só esta incompleto 
